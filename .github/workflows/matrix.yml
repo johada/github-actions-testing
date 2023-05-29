@@ -1,0 +1,22 @@
+name: Matrix workflow
+
+on: [push]
+
+
+jobs:
+  includes_only:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - site: "production"
+            datacenter: "site-a"
+          - site: "staging"
+            datacenter: "site-b"
+          - name: Simple Js Action
+            id: greet
+            uses: actions/hello-world-javascript-action@v1
+            with: 
+              who-to-greet: Jovis
+          - name: Log Greeting time
+            run: echo "${{ steps.greet.outputs.time }} ${site} ${datacenter}"
