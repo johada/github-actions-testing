@@ -5,7 +5,6 @@ on: [push]
 
 env:
   DATACENTER1: "site-a"
-  DATACENTER2: "site-b"
 
 jobs:
   includes_only:
@@ -14,7 +13,7 @@ jobs:
       matrix:
         include:
           - site: "production"
-            datacenter: ${{ env.datacenter1 }}
+            datacenter: "site-a"
           - site: "staging"
             datacenter: ${{ env.datacenter2 }}
     steps:
