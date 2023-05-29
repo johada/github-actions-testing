@@ -3,6 +3,9 @@ name: Matrix workflow
 on: [push]
 
 
+env:
+  datacenter1: "site-a"
+  datacenter2: "site-b"
 jobs:
   includes_only:
     runs-on: ubuntu-latest
@@ -10,9 +13,9 @@ jobs:
       matrix:
         include:
           - site: "production"
-            datacenter: "site-a"
+            datacenter: ${{ env.datacenter1 }}
           - site: "staging"
-            datacenter: "site-b"
+            datacenter: ${{ env.datacenter2 }}
     steps:
       - name: echo Site
         run: echo ${{ matrix.site }}
