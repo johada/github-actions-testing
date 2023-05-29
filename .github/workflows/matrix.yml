@@ -15,7 +15,7 @@ jobs:
           - site: "production"
             datacenter: "site-a"
           - site: "staging"
-            datacenter: ${{ env.datacenter2 }}
+            datacenter: ${{ env.DATACENTER1 }}
     steps:
       - name: echo Site
         run: echo ${{ matrix.site }}
