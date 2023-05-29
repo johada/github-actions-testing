@@ -14,10 +14,7 @@ jobs:
           - site: "staging"
             datacenter: "site-b"
     steps:
-          - name: Simple Js Action
-            id: greet
-            uses: actions/hello-world-javascript-action@v1
-            with: 
-              who-to-greet: ${matrix.site}
-          - name: Log Greeting time
-            run: echo "${{ steps.greet.outputs.time }}"
+      - name: echo Site
+        run: echo ${{ matrix.site }}
+      - name: echo Site
+        run: echo ${{ matrix.datacenter }}
