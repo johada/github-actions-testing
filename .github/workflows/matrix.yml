@@ -13,6 +13,7 @@ jobs:
             datacenter: "site-a"
           - site: "staging"
             datacenter: "site-b"
+    steps:
           - name: Simple Js Action
             id: greet
             uses: actions/hello-world-javascript-action@v1
