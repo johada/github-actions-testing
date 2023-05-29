@@ -4,8 +4,9 @@ on: [push]
 
 
 env:
-  datacenter1: "site-a"
-  datacenter2: "site-b"
+  DATACENTER1: "site-a"
+  DATACENTER2: "site-b"
+
 jobs:
   includes_only:
     runs-on: ubuntu-latest
