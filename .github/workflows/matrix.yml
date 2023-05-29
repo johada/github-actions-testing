@@ -20,4 +20,4 @@ jobs:
             with: 
               who-to-greet: Jovis
           - name: Log Greeting time
-            run: echo "${{ steps.greet.outputs.time }} ${site} ${datacenter}"
+            run: echo "${{ steps.greet.outputs.time }} ${matrix.site} ${matrix.datacenter}"
