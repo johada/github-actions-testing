@@ -3,12 +3,12 @@ name: Matrix workflow
 on: [push]
 
 
-env:
-  DATACENTER1: "site-a"
 
 jobs:
   includes_only:
     runs-on: ubuntu-latest
+    env:
+      DATACENTER1: "site-a"
     strategy:
       matrix:
         include:
