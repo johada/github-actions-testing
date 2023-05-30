@@ -1,27 +1,27 @@
-name: Actions workflow
+# name: Actions workflow
 
-on: [push, pull_request]
+# on: [push, pull_request]
 
-jobs:
-  run-github-actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: List Files
-        run:  |
-          pwd
-          ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
-#          git clone git@github:$GITHUB_REPOSITORY
-#          git checkout $GITHUB_SHA
-      - name: Simple Js Action
-        id: greet
-        uses: actions/hello-world-javascript-action@v1
-        with: 
-          who-to-greet: Jovis
-      - name: Log Greeting time
-        run: echo "${{ steps.greet.outputs.time }}"
+# jobs:
+#   run-github-actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v1
+#       - name: List Files
+#         run:  |
+#           pwd
+#           ls -a
+#           echo $GITHUB_SHA
+#           echo $GITHUB_REPOSITORY
+#           echo $GITHUB_WORKSPACE
+#           echo "${{ github.token }}"
+# #          git clone git@github:$GITHUB_REPOSITORY
+# #          git checkout $GITHUB_SHA
+#       - name: Simple Js Action
+#         id: greet
+#         uses: actions/hello-world-javascript-action@v1
+#         with: 
+#           who-to-greet: Jovis
+#       - name: Log Greeting time
+#         run: echo "${{ steps.greet.outputs.time }}"
