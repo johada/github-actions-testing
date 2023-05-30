@@ -29,8 +29,7 @@ jobs:
       (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
       (github.event_name == 'push' && github.actor != 'dependabot[bot]')
     timeout-minutes: 20
-    runs-on: 
-      - self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
