@@ -16,6 +16,7 @@ on:
       - opened
       - reopened
       - unlocked
+  workflow_dispatch:
 
 env:
   DOCKER_FILE: "Dockerfile"

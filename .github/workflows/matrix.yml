@@ -1,23 +1,23 @@
-name: Matrix workflow
+# name: Matrix workflow
 
-on: [push]
+# on: [push]
 
 
 
-jobs:
-  includes_only:
-    runs-on: ubuntu-latest
-    env:
-      DATACENTER1: "site-a"
-    strategy:
-      matrix:
-        include:
-          - site: "production"
-            datacenter: "site-a"
-          - site: "staging"
-            datacenter: ${{ env.DATACENTER1 }}
-    steps:
-      - name: echo Site
-        run: echo ${{ matrix.site }}
-      - name: echo Site
-        run: echo ${{ matrix.datacenter }}
+# jobs:
+#   includes_only:
+#     runs-on: ubuntu-latest
+#     env:
+#       DATACENTER1: "site-a"
+#     strategy:
+#       matrix:
+#         include:
+#           - site: "production"
+#             datacenter: "site-a"
+#           - site: "staging"
+#             datacenter: ${{ env.DATACENTER1 }}
+#     steps:
+#       - name: echo Site
+#         run: echo ${{ matrix.site }}
+#       - name: echo Site
+#         run: echo ${{ matrix.datacenter }}
